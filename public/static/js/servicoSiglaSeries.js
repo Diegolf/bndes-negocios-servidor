@@ -9,6 +9,7 @@ $(document).ready(function(){
     let tab_coluna = '<tr class="w3-border-bottom" style="background-color: #COR">'+
     '<th>#MES</th> <th>#SALDOINICIAL</th> <th>#JUROS</th> <th>#AMORTIZACAO</th> <th>#PRESTACAO</th> <th>#SALDOFINAL</th></tr>';
 
+    /*
 	$.ajax({
 		url: local+'simulacao',
 		beforeSend: function(xhr){
@@ -40,5 +41,5 @@ $(document).ready(function(){
 		cache: false,
 		processData: false
 	});
-
+    */
 });

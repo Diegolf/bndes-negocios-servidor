@@ -79,7 +79,7 @@ app.get('/simulacao/dados', function(req, res){
     let spreadAgente = req.query.spreadAgente;
 
     // codProduto, valorBem, percentualFinanciado, prazoCarencia, spreadAgente, projecaoInflacaoAnual
-    simulacao( codProduto, valorBem, percentualFinanciado, prazoFinanciamento, prazoCarencia, spreadAgente, '', 
+    simulacao( codProduto, valorBem, percentualFinanciado, prazoFinanciamento, prazoCarencia, spreadAgente, '1', 
         function (response){
             if(response != ' '){
                 tabela = response.data.tabela;
@@ -111,6 +111,10 @@ app.get('/servico-sigla-series', function(req, res){
         }
     );
     res.sendFile(__dirname + '/views/servicoSiglaSeries.html');
+});
+
+app.post('/servico-sigla-series', function(req, res){
+    red.end(JSON.stringify({"erro":false, "listaSeriesSiglas": listaSeriesSiglas }));
 });
 
 http.listen(port, function(){
