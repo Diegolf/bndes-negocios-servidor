@@ -114,7 +114,7 @@ app.get('/servico-sigla-series', function(req, res){
 });
 
 app.post('/servico-sigla-series', function(req, res){
-    red.end(JSON.stringify({"erro":false, "listaSeriesSiglas": listaSeriesSiglas }));
+    res.end(JSON.stringify({"erro":false, "listaSeriesSiglas": listaSeriesSiglas }));
 });
 
 http.listen(port, function(){

@@ -4,33 +4,61 @@ $(document).ready(function(){
 	//let local = "https://servidor-bndes-negocios.com/";
 
     let tab_header = '<tr class="w3-border-bottom">'+
-    '<th>Mês</th> <th>Saldo Inicial</th> <th>Juros</th> <th>Amortização</th> <th>Prestação</th> <th>Saldo Final</th></tr>';
+        '<th class="w3-center">Série</th><th class="w3-center">Sigla</th>'+
+        '</tr>';
     
-    let tab_coluna = '<tr class="w3-border-bottom" style="background-color: #COR">'+
-    '<th>#MES</th> <th>#SALDOINICIAL</th> <th>#JUROS</th> <th>#AMORTIZACAO</th> <th>#PRESTACAO</th> <th>#SALDOFINAL</th></tr>';
+    let tab_coluna = '<tr class="w3-border-bottom" style="background-color: #COR">>'+
+    '<td class="w3-center">#SERIE</td><td class="w3-center">#SIGLA</td>'+
+    '</tr>';
 
-    /*
 	$.ajax({
-		url: local+'simulacao',
+		url: local+'servico-sigla-series',
 		beforeSend: function(xhr){
     		if (xhr.overrideMimeType){
     			xhr.overrideMimeType("application/json");
     		}
   		},
 		success: function (d) {
-            console.log('ok');
-            let tabela = tab_header;
-            for (i = 0; i < d.tab_list.length; i ++) {
-                let col = tab_coluna;
+            let tabela1 = tab_header;
+            let tabela2 = tab_header;
+            let tabela3 = tab_header;
+
+            console.log(d.listaSeriesSiglas);
+            tam = parseInt(d.listaSeriesSiglas.length / 3) + 1;
+
+            for (i = 0; i < tam ; i++){
+                let col1 = tab_coluna;
+                let col2 = tab_coluna;
+
                 if (i % 2 == 0){
-                    col = col.replace('#COR','#EEE');
+                    col1 = col1.replace('#COR','#EEE');
+                    col2 = col1;
                 }else{
-                    col = col.replace('#COR','#FCFCFC');
+                    col1 = col1.replace('#COR','#FCFCFC');
+                    col2 = col1;
                 }
-                col = col.replace('#MES',d.tab_list[i].mes).replace('#SALDOINICIAL',d.tab_list[i].tabelaSaldoInicial).replace('#JUROS',d.tab_list[i].tabelaJurosPagos).replace('#AMORTIZACAO',d.tab_list[i].tabelaAmortizacao).replace('#PRESTACAO',d.tab_list[i].tabelaPrestacao).replace('#SALDOFINAL',d.tab_list[i].tabelaSaldoFinal);
-                tabela += col;
+                col1 = col1.replace('#SERIE', d.listaSeriesSiglas[i].serie).replace('#SIGLA', d.listaSeriesSiglas[i].sigla);
+                col2 = col2.replace('#SERIE', d.listaSeriesSiglas[i+tam].serie).replace('#SIGLA', d.listaSeriesSiglas[i+tam].sigla);
+                tabela1 += col1;
+                tabela2 += col2;
             }
-            $('#tab_simulacao').html(tabela);
+
+            for( i = tam*2; i < d.listaSeriesSiglas.length ; i++){
+                let col3 = tab_coluna;
+
+                if (i % 2 == 0){
+                    col3 = col3.replace('#COR','#EEE');
+                }else{
+                    col3 = col3.replace('#COR','#FCFCFC');
+                }
+                col3 = col3.replace('#SERIE', d.listaSeriesSiglas[i].serie).replace('#SIGLA', d.listaSeriesSiglas[i].sigla);
+                tabela3 += col3;
+            }
+            
+            $('#tabela1').html(tabela1);
+            $('#tabela2').html(tabela2);
+            $('#tabela3').html(tabela3);
+            
 		},
 		error: function (e) {
             alert('Ocorreu um erro ao carregar os dados. Tente novamente mais tarde');
@@ -41,5 +69,5 @@ $(document).ready(function(){
 		cache: false,
 		processData: false
 	});
-    */
+    
 });

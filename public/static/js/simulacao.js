@@ -4,10 +4,10 @@ $(document).ready(function(){
 	//let local = "https://servidor-bndes-negocios.com/";
 
     let tab_header = '<tr class="w3-border-bottom">'+
-    '<th>Mês</th> <th>Saldo Inicial</th> <th>Juros</th> <th>Amortização</th> <th>Prestação</th> <th>Saldo Final</th></tr>';
+    '<th class="w3-center">Mês</th> <th class="w3-center">Saldo Inicial</th> <th class="w3-center">Juros</th> <th class="w3-center">Amortização</th> <th class="w3-center">Prestação</th> <th class="w3-center">Saldo Final</th></tr>';
     
     let tab_coluna = '<tr class="w3-border-bottom" style="background-color: #COR">'+
-    '<th>#MES</th> <th>#SALDOINICIAL</th> <th>#JUROS</th> <th>#AMORTIZACAO</th> <th>#PRESTACAO</th> <th>#SALDOFINAL</th></tr>';
+    '<td class="w3-center">#MES</td> <td class="w3-center">#SALDOINICIAL</td> <td class="w3-center">#JUROS</td> <td class="w3-center">#AMORTIZACAO</td> <td class="w3-center">#PRESTACAO</td> <td class="w3-center">#SALDOFINAL</td></tr>';
 
 	$.ajax({
 		url: local+'simulacao',
@@ -17,7 +17,6 @@ $(document).ready(function(){
     		}
   		},
 		success: function (d) {
-            console.log('ok');
             let tabela = tab_header;
             for (i = 0; i < d.tab_list.length; i ++) {
                 let col = tab_coluna;
