@@ -117,6 +117,19 @@ app.post('/servico-sigla-series', function(req, res){
     res.end(JSON.stringify({"erro":false, "listaSeriesSiglas": listaSeriesSiglas }));
 });
 
+app.get('/lista-dominios',function(req, res){
+    let identificador = req.query.identificador;
+    listaDominios(
+        identificador,
+        function(response){
+            
+        },
+        function(error){
+            console.log(error);
+        }
+    );
+});
+
 http.listen(port, function(){
     console.log('listening on *:' + port);
     console.log('Testando a conexão com a API ...');
