@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	//let local = window.location.href.split('3000')[0]+'3000/';
-	let local = "https://servidor-bndes-negocios.herokuapp.com";
+	let local = "https://bndes-negocios-servidor.herokuapp.com/";
 
     let tab_header = '<tr class="w3-border-bottom">'+
     '<th class="w3-center">Mês</th> <th class="w3-center">Saldo Inicial</th> <th class="w3-center">Juros</th> <th class="w3-center">Amortização</th> <th class="w3-center">Prestação</th> <th class="w3-center">Saldo Final</th></tr>';
