@@ -8,7 +8,7 @@ var tabela = {};
 var listaSeriesSiglas = {};
 
 // TODO gerar nova chave quando necessário (depois que tudo estiver funcionando para evitar fadiga de cada execução)
-const CHAVE = 'Bearer 4f0de911-9513-3fb4-aa54-0dc1d16d8505';
+const CHAVE = 'Bearer 836fb5f3-3558-3435-a227-aa7aa329cbe4';
 
 app.use(express.static(__dirname + '/public'));
 
