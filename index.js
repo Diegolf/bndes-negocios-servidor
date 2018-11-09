@@ -77,10 +77,9 @@ app.get('/simulacao/dados', function(req, res){
     let prazoFinanciamento = req.query.prazoFinanciamento;
     let prazoCarencia = req.query.prazoCarencia
     let spreadAgente = req.query.spreadAgente;
-    let projecaoInflacaoAnual = req.query.projecaoInflacaoAnual;
 
     // codProduto, valorBem, percentualFinanciado, prazoCarencia, spreadAgente, projecaoInflacaoAnual
-    simulacao( codProduto, valorBem, percentualFinanciado, prazoFinanciamento, prazoCarencia, spreadAgente, projecaoInflacaoAnual, 
+    simulacao( codProduto, valorBem, percentualFinanciado, prazoFinanciamento, prazoCarencia, spreadAgente, '', 
         function (response){
             if(response != ' '){
                 tabela = response.data.tabela;
