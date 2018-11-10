@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	//const local = window.location.href.split('3000')[0]+'3000/';
+	// const local = window.location.href.split('3000')[0]+'3000/';
 	const local = "https://bndes-negocios-servidor.herokuapp.com/";
 
     const tab_header = '<tr class="w3-border-bottom">'+
@@ -31,7 +31,7 @@ $(document).ready(function(){
                 let col2 = tab_coluna;
 
                 if (i % 2 == 0){
-                    col1 = col1.replace('#COR','#EEE');
+                    col1 = col1.replace('#COR','#b5edc2');
                     col2 = col1;
                 }else{
                     col1 = col1.replace('#COR','#FCFCFC');
@@ -47,7 +47,7 @@ $(document).ready(function(){
                 let col3 = tab_coluna;
 
                 if (i % 2 == 0){
-                    col3 = col3.replace('#COR','#EEE');
+                    col3 = col3.replace('#COR','#b5edc2');
                 }else{
                     col3 = col3.replace('#COR','#FCFCFC');
                 }

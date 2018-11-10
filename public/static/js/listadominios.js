@@ -3,7 +3,7 @@ $(document).ready(function(){
 	//const local = window.location.href.split('3000')[0]+'3000/';
 	const local = "https://bndes-negocios-servidor.herokuapp.com/";
 
-    const pagina = '<h1 class="w3-center w3-margin"> #DESCRICAO </h1>'+
+    const pagina = '<h2 class="w3-center w3-margin"> #DESCRICAO </h2>'+
         '<div class="w3-container w3-margin-left w3-margin-right w3-padding w3-white w3-card">'+
             '<table class="w3-table" id="tab_simulacao">#TABLE'+
             '</table>'+
@@ -33,7 +33,7 @@ $(document).ready(function(){
                 for (c = 0 ; c < d[i].valores.valor.length; c++){
                     let col = tab_coluna;
                     if (c % 2 == 0){
-                        col = col.replace('#COR','#dde2ff');
+                        col = col.replace('#COR','#b5edc2');
                     }else{
                         col = col.replace('#COR','#FCFCFC');                        
                     }

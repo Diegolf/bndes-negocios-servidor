@@ -21,7 +21,7 @@ $(document).ready(function(){
             for (i = 0; i < d.tab_list.length; i ++) {
                 let col = tab_coluna;
                 if (i % 2 == 0){
-                    col = col.replace('#COR','#EEE');
+                    col = col.replace('#COR','#b5edc2');
                 }else{
                     col = col.replace('#COR','#FCFCFC');
                 }
