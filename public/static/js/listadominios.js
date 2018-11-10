@@ -33,7 +33,7 @@ $(document).ready(function(){
                 for (c = 0 ; c < d[i].valores.valor.length; c++){
                     let col = tab_coluna;
                     if (c % 2 == 0){
-                        col = col.replace('#COR','#EEE');
+                        col = col.replace('#COR','#dde2ff');
                     }else{
                         col = col.replace('#COR','#FCFCFC');                        
                     }
