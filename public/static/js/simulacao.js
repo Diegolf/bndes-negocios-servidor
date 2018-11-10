@@ -1,12 +1,12 @@
 $(document).ready(function(){
 	
-	//let local = window.location.href.split('3000')[0]+'3000/';
-	let local = "https://bndes-negocios-servidor.herokuapp.com/";
+	//const local = window.location.href.split('3000')[0]+'3000/';
+	const local = "https://bndes-negocios-servidor.herokuapp.com/";
 
-    let tab_header = '<tr class="w3-border-bottom">'+
+    const tab_header = '<tr class="w3-border-bottom">'+
     '<th class="w3-center">Mês</th> <th class="w3-center">Saldo Inicial</th> <th class="w3-center">Juros</th> <th class="w3-center">Amortização</th> <th class="w3-center">Prestação</th> <th class="w3-center">Saldo Final</th></tr>';
     
-    let tab_coluna = '<tr class="w3-border-bottom" style="background-color: #COR">'+
+    const tab_coluna = '<tr class="w3-border-bottom" style="background-color: #COR">'+
     '<td class="w3-center">#MES</td> <td class="w3-center">#SALDOINICIAL</td> <td class="w3-center">#JUROS</td> <td class="w3-center">#AMORTIZACAO</td> <td class="w3-center">#PRESTACAO</td> <td class="w3-center">#SALDOFINAL</td></tr>';
 
 	$.ajax({

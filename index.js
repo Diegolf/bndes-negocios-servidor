@@ -6,6 +6,7 @@ var port = process.env.PORT || 3000;
 
 var tabela = {};
 var listaSeriesSiglas = {};
+var ldominios = {};
 
 // TODO gerar nova chave quando necessário (depois que tudo estiver funcionando para evitar fadiga de cada execução)
 const CHAVE = 'Bearer 836fb5f3-3558-3435-a227-aa7aa329cbe4';
@@ -47,9 +48,8 @@ function consulta(pessoafisica, pessoajuridica, porte, parcelas, valorfinanciar,
             .then(callback).catch(error);
 }
 
-function listaDominios(identificador, callback, error){
+function listaDominios(callback, error){
     axios.get('https://api-labs.bndes.gov.br/opcoesfinanciamento/v1/listadominios',{ 
-        params: { identificador:identificador},
         headers: {Authorization : CHAVE}})
             .then(callback).catch(error);
 }
@@ -105,12 +105,13 @@ app.get('/servico-sigla-series', function(req, res){
     servicoSiglaSeries( 
         function(response){
             listaSeriesSiglas = response.data.listaSeriesSiglas;
+            res.sendFile(__dirname + '/views/servicoSiglaSeries.html');
         },
         function(error){
             console.log(error);
+            res.sendFile(__dirname + '/views/servicoSiglaSeries.html');
         }
     );
-    res.sendFile(__dirname + '/views/servicoSiglaSeries.html');
 });
 
 app.post('/servico-sigla-series', function(req, res){
@@ -118,16 +119,20 @@ app.post('/servico-sigla-series', function(req, res){
 });
 
 app.get('/lista-dominios',function(req, res){
-    let identificador = req.query.identificador;
     listaDominios(
-        identificador,
         function(response){
-            
+            ldominios = response.data.result.dominios;
+            res.sendFile(__dirname + '/views/listadominios.html');
         },
         function(error){
             console.log(error);
+            res.sendFile(__dirname + '/views/listadominios.html');
         }
     );
+});
+
+app.post('/lista-dominios', function(req, res){
+    res.end(JSON.stringify({"erro":false, ldominios : ldominios }));
 });
 
 http.listen(port, function(){

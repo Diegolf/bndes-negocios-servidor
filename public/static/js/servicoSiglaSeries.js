@@ -1,13 +1,13 @@
 $(document).ready(function(){
 	
-	//let local = window.location.href.split('3000')[0]+'3000/';
-	let local = "https://bndes-negocios-servidor.herokuapp.com/";
+	//const local = window.location.href.split('3000')[0]+'3000/';
+	const local = "https://bndes-negocios-servidor.herokuapp.com/";
 
-    let tab_header = '<tr class="w3-border-bottom">'+
+    const tab_header = '<tr class="w3-border-bottom">'+
         '<th class="w3-center">Série</th><th class="w3-center">Sigla</th>'+
         '</tr>';
     
-    let tab_coluna = '<tr class="w3-border-bottom" style="background-color: #COR">>'+
+    const tab_coluna = '<tr class="w3-border-bottom" style="background-color: #COR">'+
     '<td class="w3-center">#SERIE</td><td class="w3-center">#SIGLA</td>'+
     '</tr>';
 
