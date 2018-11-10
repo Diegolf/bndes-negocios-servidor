@@ -9,7 +9,7 @@ var listaSeriesSiglas = {};
 var ldominios = {};
 
 // TODO gerar nova chave quando necessário (depois que tudo estiver funcionando para evitar fadiga de cada execução)
-const CHAVE = 'Bearer 836fb5f3-3558-3435-a227-aa7aa329cbe4';
+const CHAVE = 'Bearer 68632cfb-ee49-356e-9ebe-3b8cd7be1e9c';
 
 app.use(express.static(__dirname + '/public'));
 

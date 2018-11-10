@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	// const local = window.location.href.split('3000')[0]+'3000/';
+	//const local = window.location.href.split('3000')[0]+'3000/';
 	const local = "https://bndes-negocios-servidor.herokuapp.com/";
 
     const tab_header = '<tr class="w3-border-bottom">'+
